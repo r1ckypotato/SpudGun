@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WPW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:tnt"
+    },
+    "P": {
+      "item": "minecraft:potato"
+    }
+  },
+  "result": {
+    "id": "spud_gun:loaded_potato",
+    "count": 1
+  }
+}
