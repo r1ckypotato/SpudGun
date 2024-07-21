@@ -17,13 +17,15 @@ import net.minecraft.util.Rarity;
 public class ItemRegistry {
 
     public static final SpudGunItem SPUD_GUN_ITEM = new SpudGunItem(new Item.Settings().maxCount(1).rarity(Rarity.RARE), 25, 1);
-    public static final SpudGunItem SPUD_SNIPER_ITEM = new SpudGunItem(new Item.Settings().maxCount(1).rarity(Rarity.EPIC), 50, 1.75F);
+    public static final SpudGunItem SPUD_SNIPER_ITEM = new SpudGunItem(new Item.Settings().maxCount(1).rarity(Rarity.RARE), 50, 1.75F);
     public static final LoadedPotatoItem LOADED_POTATO_ITEM = new LoadedPotatoItem();
+    public static final SpudGunItem SPUD_MACHINE_GUN_ITEM = new SpudGunItem(new Item.Settings().maxCount(1).rarity(Rarity.EPIC),  4, 1);
 
     public static void init() {
         register("spud_gun", SPUD_GUN_ITEM, new ItemGroupData(ItemGroups.TOOLS), new ItemGroupData(ItemGroups.COMBAT));
         register("spud_sniper", SPUD_SNIPER_ITEM, new ItemGroupData(ItemGroups.TOOLS), new ItemGroupData(ItemGroups.COMBAT));
         register("loaded_potato", LOADED_POTATO_ITEM, new ItemGroupData(ItemGroups.COMBAT), new ItemGroupData(ItemGroups.FOOD_AND_DRINK));
+        register("spud_machine_gun", SPUD_MACHINE_GUN_ITEM, new ItemGroupData(ItemGroups.TOOLS), new ItemGroupData(ItemGroups.COMBAT));
     }
 
     private static void register(String id, Item item, ItemGroupData... groups) {

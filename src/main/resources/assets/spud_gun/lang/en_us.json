@@ -1,5 +1,6 @@
 {
+  "item.spud_gun.loaded_potato": "Loaded Potato",
   "item.spud_gun.spud_gun": "Spud Gun",
-  "item.spud_gun.spud_sniper": "Spud Sniper",
-  "item.spud_gun.loaded_potato": "Loaded Potato"
+  "item.spud_gun.spud_machine_gun": "Spud Machine Gun",
+  "item.spud_gun.spud_sniper": "Spud Sniper"
 }
