@@ -6,15 +6,9 @@
     " II"
   ],
   "key": {
-    "I": {
-      "item": "minecraft:netherite_ingot"
-    },
-    "B": {
-      "item": "minecraft:blaze_rod"
-    },
-    "N": {
-      "item": "minecraft:netherite_block"
-    }
+    "I": "minecraft:netherite_ingot",
+    "B": "minecraft:blaze_rod",
+    "N": "minecraft:netherite_block"
   },
   "result": {
     "id": "spud_gun:spud_machine_gun",

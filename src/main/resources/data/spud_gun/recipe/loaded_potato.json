@@ -6,12 +6,8 @@
     " W "
   ],
   "key": {
-    "W": {
-      "item": "minecraft:tnt"
-    },
-    "P": {
-      "item": "minecraft:potato"
-    }
+    "W": "minecraft:tnt",
+    "P": "minecraft:potato"
   },
   "result": {
     "id": "spud_gun:loaded_potato",

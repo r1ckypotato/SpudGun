@@ -13,8 +13,8 @@ import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.explosion.ExplosionBehavior;
 
 public class LoadedPotatoItem extends Item {
-    public LoadedPotatoItem() {
-        super(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON).food(new FoodComponent.Builder().alwaysEdible().nutrition(6).saturationModifier(0.6F).build()));
+    public LoadedPotatoItem(Settings settings) {
+        super(settings);
     }
 
     @Override
