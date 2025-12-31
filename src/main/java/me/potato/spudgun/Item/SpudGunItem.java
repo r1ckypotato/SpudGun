@@ -65,7 +65,7 @@ public class SpudGunItem extends Item {
                     onCollide = (e, hitResult) -> e.getWorld().createExplosion(e, e.getDamageSources().explosion(e, e.getOwner()), new ExplosionBehavior(), e.getPos(), 6, false, World.ExplosionSourceType.MOB);
                 }
             }
-            SpudEntity spud = new SpudEntity(world, user, itemStack, 12, onCollide);
+            SpudEntity spud = new SpudEntity(world, user, user.getStackInHand(hand), 12, onCollide);
             spud.setItem(spudDisplay);
             spud.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, speed * speedMultiplier, 0.15F);
             world.spawnEntity(spud);
@@ -76,7 +76,7 @@ public class SpudGunItem extends Item {
             itemStack.decrement(1);
         }
 
-        return ActionResult.SUCCESS;
+        return ActionResult.CONSUME;
     }
 
     private ItemStack getSpuds(PlayerEntity user) {
