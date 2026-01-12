@@ -45,7 +45,7 @@ public class SpudGunItem extends Item {
         }
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.BLOCK_DISPENSER_LAUNCH, SoundCategory.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
         user.getItemCooldownManager().set(user.getStackInHand(hand), cooldown);
-        if (!world.isClient) {
+        if (!world.isClient()) {
             ItemStack spudDisplay;
             BiConsumer<SpudEntity, HitResult> onCollide = (e, h) -> {};
             float speed = 4;
@@ -62,7 +62,7 @@ public class SpudGunItem extends Item {
                         }
                     };
                 } else if (itemStack.getItem().equals(ItemRegistry.LOADED_POTATO_ITEM)) {
-                    onCollide = (e, hitResult) -> e.getWorld().createExplosion(e, e.getDamageSources().explosion(e, e.getOwner()), new ExplosionBehavior(), e.getPos(), 6, false, World.ExplosionSourceType.MOB);
+                    onCollide = (e, hitResult) -> e.getEntityWorld().createExplosion(e, e.getDamageSources().explosion(e, e.getOwner()), new ExplosionBehavior(), e.getEntityPos(), 6, false, World.ExplosionSourceType.MOB);
                 }
             }
             SpudEntity spud = new SpudEntity(world, user, user.getStackInHand(hand), 12, onCollide);

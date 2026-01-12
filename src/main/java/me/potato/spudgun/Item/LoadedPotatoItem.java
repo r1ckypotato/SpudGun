@@ -24,7 +24,7 @@ public class LoadedPotatoItem extends Item {
             public boolean canDestroyBlock(Explosion explosion, BlockView world, BlockPos pos, BlockState state, float power) {
                 return false;
             }
-        }, user.getPos(), 4, false, World.ExplosionSourceType.MOB);
+        }, user.getEntityPos(), 4, false, World.ExplosionSourceType.MOB);
         return super.finishUsing(stack, world, user);
     }
 }

@@ -44,7 +44,7 @@ public class SpudEntity extends ThrownItemEntity {
         if (status == EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES) {
             ParticleEffect particleEffect = this.getParticleParameters();
             for (int i = 0; i < 8; ++i) {
-                this.getWorld().addParticleClient(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+                this.getEntityWorld().addParticleClient(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
             }
         }
     }
@@ -52,8 +52,8 @@ public class SpudEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         Entity entity = entityHitResult.getEntity();
-        if (this.getWorld() instanceof ServerWorld serverWorld) {
-            entity.damage(serverWorld, entity.getWorld().getDamageSources().thrown(this, this.getOwner()), (float)damage * (float)Math.sqrt(getVelocity().length()));
+        if (this.getEntityWorld() instanceof ServerWorld serverWorld) {
+            entity.damage(serverWorld, entity.getEntityWorld().getDamageSources().thrown(this, this.getOwner()), (float)damage * (float)Math.sqrt(getVelocity().length()));
         }
     }
 
@@ -61,8 +61,8 @@ public class SpudEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         onCollide.accept(this, hitResult);
         super.onCollision(hitResult);
-        if (!this.getWorld().isClient) {
-            this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
+        if (!this.getEntityWorld().isClient()) {
+            this.getEntityWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
             this.discard();
         }
     }
